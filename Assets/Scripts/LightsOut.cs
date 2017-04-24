@@ -6,15 +6,13 @@ public class LightsOut : MonoBehaviour {
 
     [SerializeField] private Light[] lights;
     private bool isClicked;
-    public bool playerFound;
+    public bool playerFound; //Public because GearVRInput needs to acces it 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             playerFound = true;
-            //isClicked = true;
-            //Debug.Log("Player is true");
         }
     }
 
@@ -23,7 +21,6 @@ public class LightsOut : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             playerFound = false;
-            //Debug.Log("Player is false");
         }
     }
 

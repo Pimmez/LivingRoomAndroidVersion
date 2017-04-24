@@ -23,11 +23,10 @@ public class GearVRInput : MonoBehaviour {
         OVRTouchpad.TouchArgs touchArgs = (OVRTouchpad.TouchArgs)e;
         if (touchArgs.TouchType == OVRTouchpad.TouchEvent.SingleTap)
         {
-            //On Swipe down wordt de volgend code goed uitgevoerd, maar omdat in de swipe ook een touchTap zit (aan het begin), wordt de movement functie aangeroepen.
             ChangeRenderMaterial[] renders = FindObjectsOfType(typeof(ChangeRenderMaterial)) as ChangeRenderMaterial[];
             foreach (ChangeRenderMaterial render in renders)
             {
-                if (render.playerFund == true)
+                if (render.playerFound == true)
                 {
                     render.ChangeRenderWallpaper();
                 }
@@ -36,12 +35,10 @@ public class GearVRInput : MonoBehaviour {
             {
                 lights.LightingSwitch();
             }
-            //Debug.Log("Tap");
         }
-        if (touchArgs.TouchType == OVRTouchpad.TouchEvent.Down) //Geeft True Terug
+        if (touchArgs.TouchType == OVRTouchpad.TouchEvent.Down)
         {
             charMove.letsMove = false; 
-            //Debug.Log("Down");
 
         }
     }

@@ -8,7 +8,7 @@ public class ChangeRenderMaterial : MonoBehaviour{
     [SerializeField] private Renderer[] rends;
     private int counter;
     private bool isClicked;
-    public bool playerFund;
+    public bool playerFound; //Public because GearVRInput needs to acces it 
 
     void Start()
     {
@@ -19,8 +19,7 @@ public class ChangeRenderMaterial : MonoBehaviour{
     {
         if (other.gameObject.tag == "Player")
         {
-            playerFund = true;
-            //Debug.Log("Player Found");
+            playerFound = true;
         }
     }
 
@@ -28,8 +27,7 @@ public class ChangeRenderMaterial : MonoBehaviour{
     {
         if (other.gameObject.tag == "Player")
         {
-            playerFund = false;
-            //Debug.Log("Player not Found");
+            playerFound = false;
         }
     }
 

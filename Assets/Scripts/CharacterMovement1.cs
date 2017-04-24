@@ -32,12 +32,6 @@ public class CharacterMovement1 : MonoBehaviour {
         {
             letsMove = true;
             
-            /*
-           /Debug.Log("Mouse Y: " + Input.GetAxis("Mouse Y"));
-            currentVelocity += acceleration;
-            currentVelocity++;
-            currentVelocity += Mathf.Clamp(currentVelocity, 0.0F, maxVelocity);
-            */
         }
         if(letsMove == true)
         {
